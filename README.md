@@ -1,6 +1,11 @@
+#### To create the database
+
 ```bash
 docker run --name pg_test -e "POSTGRES_USER=postgres" -e "POSTGRES_PASSWORD=postgres" -e "POSTGRES_DB=main" -d -p 5432:5432 postgres
 ```
+
+
+#### SQL side
 
 ```sql
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
