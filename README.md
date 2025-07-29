@@ -1,5 +1,8 @@
+```bash
 docker run --name pg_test -e "POSTGRES_USER=postgres" -e "POSTGRES_PASSWORD=postgres" -e "POSTGRES_DB=main" -d -p 5432:5432 postgres
+```
 
+```sql
 CREATE EXTENSION IF NOT EXISTS "uuid-ossp";
 
 CREATE TABLE IF NOT EXISTS events(
@@ -27,3 +30,4 @@ DROP TRIGGER IF EXISTS events_created_trigger ON events;
 DROP FUNCTION IF EXISTS events_created_trigger;
 
 NOTIFY "events:created", 'optional payload';
+```
